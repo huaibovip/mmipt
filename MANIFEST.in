@@ -1,0 +1,5 @@
+include requirements/*.txt
+include mmipt/.mim/model-index.yml
+include mmipt/.mim/demo/*/*
+recursive-include mmipt/.mim/configs *.py *.yml
+recursive-include mmipt/.mim/tools *.sh *.py

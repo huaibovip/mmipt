@@ -1,0 +1,14 @@
+{
+    "metainfo": {},
+    "data_list":
+        [
+            {
+                "source_path": "atlas.pkl",
+                "target_path": "Train/subject_304.pkl"
+            },
+            {
+                "source_path": "atlas.pkl",
+                "target_path": "Train/subject_401.pkl"
+            }
+        ]
+}

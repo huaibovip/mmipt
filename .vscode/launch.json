@@ -1,0 +1,82 @@
+{
+    // 使用 IntelliSense 了解相关属性。 
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "train::debug",
+            "type": "python",
+            "request": "launch",
+            "program": "tools/train.py",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "env": {
+                "CUDA_VISIBLE_DEVICES": "0",
+                "PYTHONPATH": "${workspaceFolder}",
+            },
+            "args": [
+                "configs/transmorph/transmorph_ixi-160x192x224.py",
+            ]
+        },
+        {
+            "name": "train::resume",
+            "type": "python",
+            "request": "launch",
+            "program": "tools/train.py",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "env": {
+                "CUDA_VISIBLE_DEVICES": "0",
+                "PYTHONPATH": "${workspaceFolder}",
+            },
+            "args": [
+                "configs/transmorph/transmorph_ixi-160x192x224.py",
+                "--resume",
+            ]
+        },
+        {
+            "name": "test::debug",
+            "type": "python",
+            "request": "launch",
+            "program": "tools/test.py",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "env": {
+                "CUDA_VISIBLE_DEVICES": "2",
+                "PYTHONPATH": "${workspaceFolder}",
+            },
+            "args": [
+                "configs/transmorph/transmorph_ixi-160x192x224.py",
+                "transmorph_ixi.pth",
+            ]
+        },
+        {
+            "name": "print::config",
+            "type": "python",
+            "request": "launch",
+            "program": "tools/analysis_tools/print_config.py",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "env": {
+                "CUDA_VISIBLE_DEVICES": "0",
+                "PYTHONPATH": "${workspaceFolder}",
+            },
+            "args": [
+                "configs/transmorph/transmorph_ixi-160x192x224.py",
+            ]
+        },
+        {
+            "name": "debug",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "env": {
+                "CUDA_VISIBLE_DEVICES": "0",
+                "PYTHONPATH": "${workspaceFolder}",
+            }
+        },
+    ]
+}
